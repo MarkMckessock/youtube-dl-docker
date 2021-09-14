@@ -42,7 +42,7 @@ def load_ids() -> List[str]:
             with open(file_path, 'r') as fp:
                 content = yaml.safe_load(fp)
                 if type(content) is list:
-                    ids += yaml.safe_load(fp)
+                    ids += content
                 else:
                     logging.warn(f"File {file_path} is not a valid list of channel/playlist/video ids. Ignoring.")
     return ids
